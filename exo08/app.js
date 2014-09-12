@@ -26,8 +26,8 @@
 			quantity: 32,
 			canBuy: false,
 			images: [
-				'http://thedeliciousrevolution.com/wp-content/uploads/2008/08/Pears.png',
-				'http://wp10926194.server-he.de/data/images/fruit_images/full/pear.png'
+				'http://www.arktimes.com/images/blogimages/2011/05/18/1305756869-orange.png',
+				'http://www.wpclipart.com/food/fruit/orange/orange_big.png'
 			]
 		},
 		{
@@ -36,8 +36,8 @@
 			description: 'God of fruits! We can do wine with it!!!!',
 			quantity: 15,
 			images: [
-				'http://thedeliciousrevolution.com/wp-content/uploads/2008/08/Pears.png',
-				'http://wp10926194.server-he.de/data/images/fruit_images/full/pear.png'
+				'http://pngimg.com/upload/grape_PNG2976.png',
+				'http://www.granini.com/data/images/fruit_images/full/grapes.png'
 			]
 		}
 	];

@@ -46,5 +46,9 @@
 	
 	app.controller('StoreController', function() {
 		this.products = fruits;
+		
+		this.buy = function(product) {
+			--product.quantity;
+		};
 	});
 })();
