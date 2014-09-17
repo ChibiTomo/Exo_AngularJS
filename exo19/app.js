@@ -21,4 +21,13 @@
 			this.current = index || 0;
 		};
 	});
+
+	app.controller('FormController', function() {
+		this.comment = {};
+
+		this.addComment = function(product) {
+			product.comments.push(this.comment);
+			this.comment = {};
+		};
+	});
 })();

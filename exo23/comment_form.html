@@ -1,0 +1,33 @@
+<style>
+.ng-valid.ng-dirty {
+	border-color: green;
+}
+
+.ng-invalid.ng-dirty {
+	border-color: red;
+}
+</style>
+
+<h3>Make a comment</h3>
+<form name="commentForm"
+	ng-submit="commentForm.$valid && (formCtrl.addComment(product) || commentForm.$setPristine())"
+	novalidation>
+
+	<p>
+		<b>{{formCtrl.comment.stars}} Stars</b><br />
+		{{formCtrl.comment.content}} - <b>{{formCtrl.comment.author}}</b>
+	</p>
+
+	<fieldset>
+		Select your note :
+		<select ng-model="formCtrl.comment.stars"
+			ng-options="stars for stars in [5, 4, 3, 2, 1]"
+			required>
+			<option value="">Rate</option>
+		</select><br />
+		Email : <input type="email" ng-model="formCtrl.comment.author" required/><br />
+		Your comment :<br />
+		<textarea ng-model="formCtrl.comment.content" cols="100" rows="5" required></textarea>
+		<input type="submit" value="Post" />
+	</fieldset>
+</form>

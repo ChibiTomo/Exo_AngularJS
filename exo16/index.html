@@ -31,8 +31,19 @@
 					{{comment.content}} - <b>{{comment.author}}</b>
 				</p>
 
+
+				<style>
+.ng-dirty.ng-valid {
+	border-color: green;
+}
+
+.ng-dirty.ng-invalid {
+	border-color: red;
+}
+				</style>
+
 				<h3>Make a comment</h3>
-				<form name="commentForm">
+				<form novalidation>
 					<p>
 						<b>{{comment.stars}} Stars</b><br />
 						{{comment.content}} - <b>{{comment.author}}</b>
@@ -40,12 +51,14 @@
 
 					<fieldset>
 						Select your note :
-						<select ng-model="comment.stars" ng-options="stars for stars in [5, 4, 3, 2, 1]">
+						<select ng-model="comment.stars"
+							ng-options="stars for stars in [5, 4, 3, 2, 1]"
+							required>
 							<option value="">Rate</option>
 						</select><br />
-						Email : <input type="email" ng-model="comment.author"/><br />
+						Email : <input type="email" ng-model="comment.author" required/><br />
 						Your comment :<br />
-						<textarea ng-model="comment.content" cols="100" rows="5"></textarea>
+						<textarea ng-model="comment.content" cols="100" rows="5" required></textarea>
 						<input type="submit" value="Post" />
 					</fieldset>
 				</form>

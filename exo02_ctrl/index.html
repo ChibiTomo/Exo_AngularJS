@@ -4,10 +4,12 @@
 		<script type="text/javascript" src="../angular-1.2.9/angular.min.js"></script>
 		<script type="text/javascript" src="app.js"></script>
 	</head>
-	
-	<body>
-		<div ng-app="my_app">
-			<h1>{{'Hello' + ' World!!'}}</h1>
+
+	<body ng-app="store">
+		<div ng-controller="StoreController as storeCtrl">
+			<h1>{{storeCtrl.product.name}}</h1>
+			<h2>${{storeCtrl.product.price}}</h2>
+			<p>{{storeCtrl.product.description}}</p>
 		</div>
 	</body>
 </html>

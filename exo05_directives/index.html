@@ -4,16 +4,17 @@
 		<script type="text/javascript" src="../angular-1.2.9/angular.min.js"></script>
 		<script type="text/javascript" src="app.js"></script>
 	</head>
-	
+
 	<body ng-app="store">
 		<div ng-controller="StoreController as store">
 			<div ng-repeat="product in store.products" ng-show="product.canBuy"> <!-- ng-hide="!product.canBuy" -->
 				<h1>{{product.name | uppercase}}</h1>
 				<h2>{{product.price | currency}}</h2>
 				<p>
-					Quantity : {{product.quantity}} 
-					<button ng-disabled="product.quantity === 0">Buy</button> 
+					Quantity : {{product.quantity}}
+					<button ng-disabled="product.quantity === 0">Buy</button>
 					<span ng-hide="product.quantity > 0">Sorry, no more of it...</span>
+					<span ng-show="product.quantity > 0">Yes you can buy!!</span>
 				</p>
 				<p>{{product.description}}</p>
 				<hr />
