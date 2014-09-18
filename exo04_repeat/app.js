@@ -1,4 +1,5 @@
 (function() {
+	// NEW CODE
 	var fruits = [
 		{
 			name: 'Apple',
@@ -21,10 +22,13 @@
 			description: 'God of fruits! We can do wine with it!!!!'
 		}
 	];
-	
+	//END NEW CODE
+
 	var app = angular.module('store', []);
-	
+
+	//NEW CODE
 	app.controller('StoreController', function() {
 		this.products = fruits;
 	});
+	//END NEW CODE
 })();

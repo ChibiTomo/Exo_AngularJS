@@ -7,10 +7,14 @@
 	</head>
 
 	<body ng-app="store">
-		<div ng-controller="StoreController as store">
-			<h1>{{store.product.name | uppercase}}</h1>
-			<h2>{{store.product.price | currency : '€'}}</h2>
-			<p>{{store.product.description}}</p>
+		<div ng-controller="StoreController as storeCtrl">
+
+			<!-- NEW CODE -->
+			<h1>{{storeCtrl.product.name | uppercase}}</h1>
+			<h2>{{storeCtrl.product.price | currency : '€'}}</h2>
+			<!-- END NEW CODE -->
+
+			<p>{{storeCtrl.product.description}}</p>
 		</div>
 	</body>
 </html>

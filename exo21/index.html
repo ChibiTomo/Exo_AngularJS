@@ -6,8 +6,8 @@
 	</head>
 
 	<body ng-app="store">
-		<div ng-controller="StoreController as store">
-			<div ng-repeat="product in store.products" ng-show="product.canBuy"> <!-- ng-hide="!product.canBuy" -->
+		<div ng-controller="StoreController as storeCtrl">
+			<div ng-repeat="product in storeCtrl.products" ng-show="product.canBuy"> <!-- ng-hide="!product.canBuy" -->
 				<product-gallery></product-gallery>
 				<product-spec></product-spec>
 				<product-comments></product-comments>

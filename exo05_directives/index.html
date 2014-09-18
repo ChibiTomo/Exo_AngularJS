@@ -5,17 +5,35 @@
 		<script type="text/javascript" src="app.js"></script>
 	</head>
 
+	<!--
+	Used directives:
+		- ng-app
+		- ng-controller
+		- ng-repeat
+		- ng-show
+		- ng-hide
+		- ng-disabled
+
+	Used filters:
+		- uppercase, lowercase
+		- currency
+	-->
+
 	<body ng-app="store">
-		<div ng-controller="StoreController as store">
-			<div ng-repeat="product in store.products" ng-show="product.canBuy"> <!-- ng-hide="!product.canBuy" -->
+		<div ng-controller="StoreController as storeCtrl">
+			<div ng-repeat="product in storeCtrl.products" ng-show="product.canBuy"> <!-- ng-hide="!product.canBuy" -->
 				<h1>{{product.name | uppercase}}</h1>
 				<h2>{{product.price | currency}}</h2>
+
+				<!-- NEW CODE -->
 				<p>
 					Quantity : {{product.quantity}}
 					<button ng-disabled="product.quantity === 0">Buy</button>
 					<span ng-hide="product.quantity > 0">Sorry, no more of it...</span>
 					<span ng-show="product.quantity > 0">Yes you can buy!!</span>
 				</p>
+				<!-- END NEW CODE -->
+
 				<p>{{product.description}}</p>
 				<hr />
 			</div>

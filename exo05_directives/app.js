@@ -4,8 +4,10 @@
 			name: 'Apple',
 			price: 0.5,
 			description: 'Apples are really good fruits! Did you know that you can eat one different apple per days during one year without eating the same twice?!',
+			// NEW CODE
 			quantity: 21,
 			canBuy: true
+			// END NEW CODE
 		},
 		{
 			name: 'Pear',
@@ -28,9 +30,9 @@
 			quantity: 15
 		}
 	];
-	
+
 	var app = angular.module('store', []);
-	
+
 	app.controller('StoreController', function() {
 		this.products = fruits;
 	});

@@ -2,7 +2,7 @@
 <h2>{{product.price | currency}}</h2>
 <p>
 	Quantity : {{product.quantity}}
-	<button ng-click="store.buy(product)" ng-disabled="product.quantity === 0">Buy</button>
+	<button ng-click="storeCtrl.buy(product)" ng-disabled="product.quantity === 0">Buy</button>
 	<span ng-hide="product.quantity > 0">Sorry, no more of it...</span>
 </p>
 <p>{{product.description}}</p>
