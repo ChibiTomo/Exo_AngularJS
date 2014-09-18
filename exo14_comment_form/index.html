@@ -16,6 +16,7 @@
 							width="20" height="20" style="border: 1px solid gray; margin: 0px 5px;"/>
 					</center>
 				</div>
+
 				<h1>{{product.name | uppercase}}</h1>
 				<h2>{{product.price | currency}}</h2>
 				<p>
@@ -25,10 +26,35 @@
 				</p>
 				<p>{{product.description}}</p>
 
-				<p ng-repeat="comment in product.comments">
-						<b>{{comment.stars}} Stars</b><br />
-						{{comment.content}} - <b>{{comment.author}}</b>
-				</p>
+				<div ng-repeat="comment in product.comments">
+					<div ng-controller="StarController as starCtrl" style="font-size: 0px;">
+						<img src="../image/star_full.png" width="15" height="15"
+							ng-repeat="i in starCtrl.getRange(comment.stars) track by $index" />
+						<img src="../image/star_empty.png" width="15" height="15"
+							ng-repeat="i in starCtrl.getRange(5 - comment.stars) track by $index" />
+					</div>
+					{{comment.content}} - <b>{{comment.author}}</b>
+				</div>
+
+				<!-- NEW CODE -->
+				<h3>Make a comment</h3>
+				<form name="commentForm">
+					<fieldset>
+					Select your note :
+						<select>
+							<option value="">Rate</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select><br />
+					Email : <input type="email" name="author"/><br />
+					Your comment :<br />
+					<textarea name="content" cols="100" rows="5"></textarea>
+					</fieldset>
+				</form>
+				<!-- END NEW CODE -->
 				<hr />
 			</div>
 		</div>

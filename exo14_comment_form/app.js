@@ -21,4 +21,11 @@
 			this.current = index || 0;
 		};
 	});
+
+	app.controller('StarController', function() {
+		this.getRange = function(nbr) {
+			nbr = nbr || 0;
+			return new Array(nbr);
+		};
+	});
 })();
