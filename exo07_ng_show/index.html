@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="../angular-1.2.9/angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</head>
+
+	<body ng-app="store">
+		<div ng-controller="StoreController as storeCtrl">
+			<div ng-repeat="product in storeCtrl.products" ng-show="product.canBuy"> <!-- ng-hide="!product.canBuy" -->
+
+				<!-- NEW CODE -->
+				<img ng-show="product.images.length > 0" ng-src="{{product.images[0]}}" width="100" height="100" style="border: 1px solid gray; float: left;" />
+				<!-- END NEW CODE -->
+
+				<h1>{{product.name | uppercase}}</h1>
+				<h2>{{product.price | currency}}</h2>
+				<p>
+					Quantity : {{product.quantity}}
+					<button ng-disabled="product.quantity === 0">Buy</button>
+					<span ng-hide="product.quantity > 0">Sorry, no more of it...</span>
+				</p>
+				<p>{{product.description}}</p>
+				<hr />
+			</div>
+		</div>
+	</body>
+</html>
