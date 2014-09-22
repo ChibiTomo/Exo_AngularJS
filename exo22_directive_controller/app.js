@@ -13,7 +13,7 @@
 					this.current = index || 0;
 				};
 			},
-			controllerAs: 'gallery'
+			controllerAs: 'galleryCtrl'
 			// END NEW CODE
 		};
 	});
