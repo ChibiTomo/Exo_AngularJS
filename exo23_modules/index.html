@@ -3,17 +3,18 @@
 	<head>
 		<script type="text/javascript" src="../angular-1.2.9/angular.min.js"></script>
 		<script type="text/javascript" src="app.js"></script>
+		<!-- NEW CODE -->
+		<script type="text/javascript" src="product.js"></script>
+		<!-- END NEW CODE -->
 	</head>
 
 	<body ng-app="store">
 		<div ng-controller="StoreController as storeCtrl">
 			<div ng-repeat="product in storeCtrl.products" ng-show="product.canBuy"> <!-- ng-hide="!product.canBuy" -->
-				<!-- NEW CODE -->
 				<product-gallery></product-gallery>
 				<product-spec></product-spec>
 				<product-comments></product-comments>
 				<comment-form></comment-form>
-				<!-- END NEW CODE -->
 				<hr />
 			</div>
 		</div>
