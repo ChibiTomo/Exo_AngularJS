@@ -36,25 +36,30 @@
 					{{comment.content}} - <b>{{comment.author}}</b>
 				</div>
 
-				<!-- NEW CODE -->
 				<h3>Make a comment</h3>
+					<!-- NEW CODE -->
+					<div>
+						<div ng-controller="StarController as starCtrl" style="font-size: 0px;">
+							<img src="../image/star_full.png" width="15" height="15"
+								ng-repeat="i in starCtrl.getRange(comment.stars) track by $index" />
+							<img src="../image/star_empty.png" width="15" height="15"
+								ng-repeat="i in starCtrl.getRange(5 - comment.stars) track by $index" />
+						</div>
+						{{comment.content}} - <b>{{comment.author}}</b>
+					</div>
+					<!-- NEW CODE -->
+
 				<form>
 					<fieldset>
-					Select your note :
-						<select>
+						Select your note :
+						<select ng-model="comment.stars" ng-options="stars for stars in [5, 4, 3, 2, 1]">
 							<option value="">Rate</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
 						</select><br />
-					Email : <input type="email" name="author"/><br />
-					Your comment :<br />
-					<textarea name="content" cols="100" rows="5"></textarea>
+						Email : <input type="email" ng-model="comment.author"/><br />
+						Your comment :<br />
+						<textarea ng-model="comment.content" cols="100" rows="5"></textarea>
 					</fieldset>
 				</form>
-				<!-- END NEW CODE -->
 				<hr />
 			</div>
 		</div>

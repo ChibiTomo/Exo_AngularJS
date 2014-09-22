@@ -10,7 +10,7 @@
 			});
 
 		this.buy = function(product) {
-			--product.quantity;
+			product.quantity -= 1;
 		};
 	}]);
 

@@ -1,0 +1,4 @@
+<div ng-repeat="comment in product.comments">
+	<div ng-include="'stars.html'"></div>
+	{{comment.content}} - <b>{{comment.author}}</b>
+</div>

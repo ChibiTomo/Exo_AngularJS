@@ -36,25 +36,61 @@
 					{{comment.content}} - <b>{{comment.author}}</b>
 				</div>
 
-				<!-- NEW CODE -->
+
+				<style>
+input.ng-dirty.ng-valid,
+textarea.ng-dirty.ng-valid,
+select.ng-dirty.ng-valid {
+	background-color: #DFFFDF;
+}
+
+input.ng-dirty.ng-invalid,
+textarea.ng-dirty.ng-invalid,
+select.ng-dirty.ng-invalid {
+	background-color: #FFCACA;
+}
+
+input.ng-pristine,
+textarea.ng-pristine,
+select.ng-pristine {
+	background-color: #FFFFD9;
+}
+				</style>
+
 				<h3>Make a comment</h3>
-				<form>
-					<fieldset>
-					Select your note :
-						<select>
-							<option value="">Rate</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-						</select><br />
-					Email : <input type="email" name="author"/><br />
-					Your comment :<br />
-					<textarea name="content" cols="100" rows="5"></textarea>
-					</fieldset>
-				</form>
-				<!-- END NEW CODE -->
+
+				<div ng-controller="AddCommentController as addCommentCtrl">
+					<div>
+						<div ng-controller="StarController as starCtrl" style="font-size: 0px;">
+							<img src="../image/star_full.png" width="15" height="15"
+								ng-repeat="i in starCtrl.getRange(addCommentCtrl.comment.stars) track by $index" />
+							<img src="../image/star_empty.png" width="15" height="15"
+								ng-repeat="i in starCtrl.getRange(5 - addCommentCtrl.comment.stars) track by $index" />
+						</div>
+						{{addCommentCtrl.comment.content}} - <b>{{addCommentCtrl.comment.author}}</b>
+					</div>
+
+					<!-- NEW CODE -->
+					<form name="commentForm"
+						ng-submit="addCommentCtrl.addComment(product) || commentForm.$setPristine()"
+						novalidation>
+					<!-- END NEW CODE -->
+
+						<fieldset>
+							Select your note :
+							<select ng-model="addCommentCtrl.comment.stars"
+								ng-options="stars for stars in [5, 4, 3, 2, 1]"
+								required>
+								<option value="">Rate</option>
+							</select><br />
+							Email : <input type="email" ng-model="addCommentCtrl.comment.author" required/><br />
+							Your comment :<br />
+							<textarea ng-model="addCommentCtrl.comment.content" cols="100" rows="5" required></textarea>
+
+							<input type="submit" value="Post" ng-disabled="!commentForm.$valid"/>
+						</fieldset>
+					</form>
+				</div>
 				<hr />
 			</div>
 		</div>
