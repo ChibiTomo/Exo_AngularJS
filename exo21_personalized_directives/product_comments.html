@@ -1,6 +1,6 @@
 <div ng-repeat="comment in product.comments">
 	<!-- NEW CODE -->
-	<stars></stars>
+	<stars ng-init="obj = comment"></stars>
 	<!-- END NEW CODE -->
 	{{comment.content}} - <b>{{comment.author}}</b>
 </div>

@@ -12,7 +12,7 @@
 					this.current = index || 0;
 				};
 			},
-			controllerAs: 'gallery'
+			controllerAs: 'galleryCtrl'
 		};
 	});
 	app.directive('productSpec', function(){

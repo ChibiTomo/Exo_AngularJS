@@ -22,7 +22,7 @@ select.ng-pristine {
 <div ng-controller="AddCommentController as addCommentCtrl">
 	<div>
 		<!-- NEW CODE -->
-		<stars ng-init="comment = addCommentCtrl.comment"></stars>
+		<stars ng-init="obj = addCommentCtrl.comment"></stars>
 		<!-- END NEW CODE -->
 		{{addCommentCtrl.comment.content}} - <b>{{addCommentCtrl.comment.author}}</b>
 	</div>
