@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module('product', []);
+	var app = angular.module('product', [ 'stars' ]);
 
 	app.directive('productGallery', function(){
 		return {
@@ -40,19 +40,6 @@
 				};
 			},
 			controllerAs: 'addCommentCtrl'
-		};
-	});
-	app.directive('stars', function(){
-		return {
-			restrict: 'E',
-			templateUrl: 'stars.html',
-			controller: function() {
-				this.getRange = function(nbr) {
-					nbr = nbr || 0;
-					return new Array(nbr);
-				};
-			},
-			controllerAs: 'starCtrl'
 		};
 	});
 })();

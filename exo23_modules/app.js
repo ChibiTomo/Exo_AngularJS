@@ -1,5 +1,7 @@
 (function() {
+	// NEW CODE
 	var app = angular.module('store', [ 'product' ]);
+	// END NEW CODE
 
 	app.controller('StoreController', ['$http', function($http) {
 		var self = this;
